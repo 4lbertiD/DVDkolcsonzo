@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-6">
+        <h4>DVD hozzáadása:</h4>
+      <form [formGroup]="dvdForm">
+            <label for="name">Cím:</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+            <div class="text-danger" *ngIf="title.invalid && (title.dirty || title.touched)">
+                <small>Cím kitöltése kötelező.</small>
+            </div>
+            <label for="address">Beszerzés dátuma:</label>
+            <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="acq_date" formControlName="acq_date">
+            <div class="text-danger" *ngIf="acq_date.invalid && (acq_date.dirty || acq_date.touched)">
+                <small>Dátum kitöltése kötelező.</small>
+            </div>
+            <br /> 
+            <input type="radio" id="status" formControlName="status" value="szabad">
+            <label for="age1">Szabad</label><br>
+            <input type="radio"id="status" formControlName="status" value="selejt">
+            <label for="age1">Selejtezve</label><br>
+            <br /> 
+            <button class="btn btn-primary mt-2" (click)="addDVD()">Véglegesít</button>
+        </form>
+    </div>
+</div>

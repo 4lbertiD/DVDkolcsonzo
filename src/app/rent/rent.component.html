@@ -1,0 +1,34 @@
+<h4>DVD kölcsönzése:</h4>
+<br />
+<form [formGroup]="rentForm">
+<div formArrayName="dvds">
+    <datalist id="dvdOptions">
+        <option [value] = "dvd.title + ' /' + dvd.id + '/'" *ngFor = "let dvd of dvds" ></option>
+     </datalist>
+<div *ngFor="let DVD of dvdsFormArray.controls; let i = index" >
+    <p  [formGroup] = "toGroup(DVD)" >
+
+<input class="form-control" list = "dvdOptions" [id]="'dvdsList' + i " formControlName="dvd" (change)="onDVDchange($event, toGroup(DVD))">
+<input type="hidden" formControlName="id">
+<button class="btn btn-danger" (click)="removeDVD(i)">Törlés</button>
+</p>
+</div>
+<br />
+<button class="btn btn-primary" (click)="addDVD()">DVD(k) hozzáadása</button>
+</div>
+<br />
+<label for="address">Kölcsönzés dátuma:</label>
+<input type="date" class="form-control" placeholder="YYYY-MM-DD" id="out" formControlName="out_date">
+<br />
+<button class="btn btn-success" (click)="rent()">Kölcsönöz</button>
+</form>
+<br />
+<h4>Kikölcsönzött DVD-k listája:</h4>
+<br />
+<div>
+    <ul>
+        <li *ngFor="let DVD of rentedDVD">
+            {{ DVD.title}}
+        </li>
+    </ul>
+    </div>

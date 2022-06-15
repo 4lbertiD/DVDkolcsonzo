@@ -1,0 +1,8 @@
+.checker{
+    float:left;
+    margin: 10px 10px 0 0;
+    cursor: pointer;
+}
+.margin-left{
+    margin-left: 10px !important;
+}

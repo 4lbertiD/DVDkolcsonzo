@@ -1,0 +1,25 @@
+<div>
+    <h4>Cím:</h4>
+    <span class="badge badge-success" style="background-color: rgb(78, 49, 240);">{{dvd.title}}</span>
+    <div>
+        <br />
+        <h4>Állapot:</h4>
+        <span class="badge badge-success" style="background-color: rgb(15, 161, 93);">{{dvd.status}}</span>
+       
+    </div>
+
+    <div *ngIf="dvd.status == 'kint'">
+        <div>
+            <br />
+            <h4>Kikölcsönözés dátuma:</h4>
+            <span class="badge badge-success" style="background-color: rgb(53, 137, 233);">{{dvd.rents.out_date | date:"yyyy.MM.dd"}}</span>
+    </div>
+        <div>
+            <br />
+            <h4>Kölcsönző neve:</h4>
+            <span class="badge badge-success" style="background-color: rgb(243, 140, 22);">{{dvd.rents.renter.name}}</span>
+        </div>
+    </div>
+    <br />
+    <button class="btn btn-primary" (click)="back()">Felszabadítás</button>
+</div>

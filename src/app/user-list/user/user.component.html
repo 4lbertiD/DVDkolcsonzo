@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-10">
+          <h5>{{"ID: " + user.id}}
+            <span class="badge badge-success" style="background-color: rgb(78, 49, 240);">{{ user.name}}</span>
+            <span class="badge badge-success" style="background-color: rgb(56, 151, 180);">{{user.address}}</span>
+            <span class="badge badge-success" style="background-color: green;">{{user.tel}}</span>
+            <span class="badge badge-success" style="background-color: red;">{{user.uid}}</span>
+            <button class="btn btn-primary margin-left"(click)="edit(user.id)">Módosítás</button>
+            <button class="btn btn-primary margin-left"(click)="rent(user.id)">Kölcsönzés</button>
+        </h5>
+        
+        </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="userForm">
+            <label for="name">Név:</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+            <div class="text-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <small>Név kitöltése kötelező.</small>
+            </div>
+            <label for="address">Cím:</label>
+            <input type="text" class="form-control" id="address" formControlName="address">
+            <div class="text-danger" *ngIf="address.invalid && (address.dirty || address.touched)">
+                <small>Cím kitöltése kötelező.</small>
+            </div>
+            <label for="tel">Telefon:</label>
+            <input type="text" class="form-control" id="tel" formControlName="tel">
+            <div class="text-danger" *ngIf="tel.invalid && (tel.dirty || tel.touched)">
+                <small>Telefon kitöltése kötelező.</small>
+            </div>
+            <label for="uid">SZIG szám:</label>
+            <input type="text" class="form-control" id="uid" formControlName="uid">
+            <div class="text-danger" *ngIf="uid.invalid && (uid.dirty || uid.touched)">
+                <small>SZIG szám kitöltése kötelező.</small>
+            </div>
+            <label for="id">ID:</label>
+            <input type="text" class="form-control" id="id" formControlName="id" readonly>
+            <div class="text-danger" *ngIf="id.invalid && (id.dirty || id.touched)">
+            </div>
+            <div class="checker">
+            <label for="deletedcheck">Töröljem?</label>
+            ->
+            <input type="checkbox" checked="1" id="deletedcheck" formControlName="deleted" />
+            <button class="btn btn-primary mt-2 margin-left" (click)="addUser()">Véglegesít</button>
+        </div>
+        </form>
+    </div>
+</div>

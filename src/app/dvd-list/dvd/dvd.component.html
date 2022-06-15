@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-10">
+          <h5>{{"ID: " + dvd.id}}
+            <span class="badge badge-success" style="background-color: rgb(78, 49, 240);">{{dvd.title}}</span>
+            <span class="badge badge-success" placeholder="YYYY-MM-DD" style="background-color: rgb(56, 151, 180);">{{dvd.acq_date | date:"yyyy.MM.dd" }}</span>
+            <span class="badge badge-success" style="background-color: green;">{{dvd.status}}</span>
+            <button class="btn btn-primary margin-left"(click)="edit(dvd.id)">Módosítás</button>
+            <button class="btn btn-primary margin-left"(click)="info(dvd.id)">Kölcsönzési adatok</button>
+        </h5>
+        </div>
+</div>

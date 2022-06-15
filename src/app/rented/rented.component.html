@@ -1,0 +1,9 @@
+<h4>Késések:</h4>
+<ul>
+    <li *ngFor="let dvd of dvds">
+        <span class="badge badge-success" style="background-color: rgb(15, 161, 93);">{{dvd.title}}</span>
+        <span class="badge badge-success" style="background-color: rgb(37, 65, 190);">{{dvd.rents.renter.name}}</span>
+        <span class="badge badge-success" style="background-color: rgb(209, 107, 24);">{{dvd.rents.out_date | date:"yyyy.MM.dd"}}</span>
+        <span class="badge badge-success" style="background-color: rgb(255, 0, 0);">{{"Késik " + getDelayDate(dvd)+ " napja"}}</span>
+    </li>
+</ul>
